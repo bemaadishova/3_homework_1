@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
     private Button openBtn;
     private EditText editText;
@@ -20,18 +22,18 @@ public class MainActivity extends AppCompatActivity {
         openBtn = findViewById(R.id.btn_open);
         editText = findViewById(R.id.edit_text);
 
-       openBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,secondActivity.class);
-                intent.putExtra("text", editText.getText().toString());
-                startActivity(intent);
-            }
-        });
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType(Intent.EXTRA_MIME_TYPES);
-        startActivity(intent);
+       openBtn.setOnClickListener(view -> {
+           Intent intent = new Intent(Intent.ACTION_SEND);
+           intent.setType("text/plain");
+           intent.putExtra(Intent.EXTRA_TEXT, getText(Integer.parseInt("")));
+           startActivity(intent);
 
-        Intent intent1 = new Intent(Intent.ACTION_CALL);
+       });
+
+
     }
+
+
+
+
 }
