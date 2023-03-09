@@ -2,6 +2,7 @@ package com.example.a3_homework1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private Button openBtn;
     private EditText editText;
 
+
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,14 +28,13 @@ public class MainActivity extends AppCompatActivity {
        openBtn.setOnClickListener(view -> {
            Intent intent = new Intent(Intent.ACTION_SEND);
            intent.setType("text/plain");
-           intent.putExtra(Intent.EXTRA_TEXT, getText(Integer.parseInt("")));
+           intent.putExtra(Intent.EXTRA_TEXT, getText(R.id.edit_text));
            startActivity(intent);
 
        });
 
 
     }
-
 
 
 

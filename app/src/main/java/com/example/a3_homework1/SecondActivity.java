@@ -6,7 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class secondActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
     private TextView textView;
 
     @SuppressLint("MissingInflatedId")
