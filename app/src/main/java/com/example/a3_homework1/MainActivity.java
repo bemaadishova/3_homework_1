@@ -14,6 +14,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
     private Button openBtn;
     private EditText editText;
+    private int Text;
 
 
     @SuppressLint("ResourceType")
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
        openBtn.setOnClickListener(view -> {
            Intent intent = new Intent(Intent.ACTION_SEND);
            intent.setType("text/plain");
-           intent.putExtra(Intent.EXTRA_TEXT, getText(R.id.edit_text));
+           intent.putExtra(Intent.EXTRA_TEXT, getText(Text).toString());
            startActivity(intent);
 
        });
